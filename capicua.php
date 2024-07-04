@@ -2,9 +2,10 @@
 
 if(isset($_POST)){
     $num = intval($_POST['num']);
-    $fac = 1;
-    for($i = 1; $i <= $num; $i++){
-        $fac *= $i;
+    $aux = $aux;
+    while ($aux > 0){
+        $aux = ($aux * 10) + ($aux % 10);
+        $aux = $aux / 10;
     }
 }
 ?>
@@ -19,8 +20,11 @@ if(isset($_POST)){
 </head>
 <body>
     <div class="container">
-        <p>El factorial es: <?= $fac ?></p>
-        
+        <?php if ($aux == $num): ?>
+        <p>El numero <?=$num?> si es capicua</p>
+        <?php else: ?>
+        <p>El numero <?=$num?> no es capicua</p>
+        <?php endif; ?>
     </div>
 
   
